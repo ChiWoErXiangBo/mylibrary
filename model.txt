@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>新建网页</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="布尔教育 http://www.itbool.com" />
+<link rel="stylesheet" type="text/css" href="./images/reset.css">
+<link rel="stylesheet" type="text/css" href="./images/new.css">
+<style>
+	#title{
+	font-size: 30px;
+	text-align: center;
+	font-weight: 50px;
+
+}
+	#zhuce{
+		font-size: 15px;
+		text-align: center;
+	}
+	#name{
+		position: relative;
+		top: 9px;
+		right: 35px;
+		font-size: 15px;
+		text-align: right;
+	}
+</style>
+</head>
+    <body>
+    	<body align="center">
+    	<div id = "container">
+    		<div id = "head">
+            <img src="./images/logo32_.png" alt="" /> 
+            	
+		    		<ul id ="nav">
+		    			<p id = "first">
+		    			<li><a href="./index.php">首&nbsp;&nbsp;页</a></li>
+		    			</p>
+
+		    			<?php 
+		    			$number = $_GET['trueuser'];
+		    			echo '<li><a href="./myinformation.php?trueuser=';
+		    			echo $number;
+		    			echo '">我的信息</a></li>';
+		    			
+		    			?>
+		    			<li><a href="">图书国家编码</a></li>
+		    			<li><a href="">借书规则</a></li>
+		    			<li><a href="">关于我们</a></li>
+		    			<li><a href="./complain.html">意见反馈</a></li>
+
+		    			<?php 
+		    			echo '<p id="name">';
+		    				$user = $_GET['trueuser'];
+		                    echo $user;
+		    			echo "</p>";	
+		    				?>	
+
+		    		</ul>
+    			</div>
+    			<div id = 'body2'>
+      
+    			 </div>	
+    		</div>
+    </body>
+    <script>
+    function check(){
+    	var user = document.getElementById('user').value;
+    	var passwords = document.getElementById('passwords').value;
+    	if(user==''||passwords==''){
+    		alert('用户名或密码不能为空');
+    		return false;
+    	}
+    	else{
+    		return true;
+    	}
+    }
+    var button1 = document.getElementById('goto')
+    button1.onclick = function(){
+        window.location.href="regist.php";
+    }
+
+    </script>
+</html>
